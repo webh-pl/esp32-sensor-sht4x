@@ -1,0 +1,7 @@
+version: "1.0.0"
+description: SHT4x temperature and humidity over a caller-owned I2C bus
+license: MIT
+targets:
+  - esp32c5
+dependencies:
+  idf: ">=6.0"
