@@ -107,5 +107,5 @@ No `sdkconfig` options are required. `sht.h` includes `driver/i2c_master.h` beca
 
 ## Requirements and license
 
-- ESP-IDF **6.0 or newer**; developed on ESP32-C5 (Seeed XIAO, IDF v6.0.2). Other targets with the I2C master driver should work but are unverified.
+- ESP-IDF **6.0 or newer**; measured on ESP32-C5 (Seeed XIAO, IDF v6.0.2). `idf_component.yml` lists only `esp32c5` — that is the supported target until another board is measured and added there.
 - License: [MIT](LICENSE).

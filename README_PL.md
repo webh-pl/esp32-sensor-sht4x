@@ -107,5 +107,5 @@ Potem `#include "sht.h"` i budujesz jak zwykle — menedżer komponentów podł�
 
 ## Wymagania i licencja
 
-- ESP-IDF **6.0 lub nowszy**; rozwijane na ESP32-C5 (Seeed XIAO, IDF v6.0.2). Inne układy ze sterownikiem I2C master powinny działać, ale nie były sprawdzane.
+- ESP-IDF **6.0 lub nowszy**; zmierzone na ESP32-C5 (Seeed XIAO, IDF v6.0.2). `idf_component.yml` wymienia tylko `esp32c5` — to jedyny wspierany target, dopóki inna płytka nie zostanie zmierzona i dopisana.
 - Licencja: [MIT](LICENSE).
