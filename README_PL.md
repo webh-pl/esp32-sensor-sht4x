@@ -100,6 +100,7 @@ Potem `#include "sht.h"` i budujesz jak zwykle — menedżer komponentów podł�
 ## Warto wiedzieć / ograniczenia
 
 - **Tylko SHT4x.** Komenda `0xFD`. SHT3x to inny protokół i inny moduł.
+- **Init tylko podpina urządzenie.** `sht_init()` nie gada z chipem. Obecność, NACK i CRC sprawdza `sht_read()`.
 - **Jedna instancja.** Moduł nie jest reentrantny i nie ma mutexa; wołaj go z jednego zadania.
 - **Aplikacja jest właścicielem busa.** Piny, port i pull-upy nie są sprawą tego modułu. Nie wrzucaj ich z powrotem do `sht.c`.
 - **Busy-wait, nie opóźnienie FreeRTOS.** Konwersja high-repeatability potrzebuje ~8,3 ms; przy `CONFIG_FREERTOS_HZ=100` opóźnienie o jeden tick może przeciągnąć się do 10 ms, więc wait to `esp_rom_delay_us(10000)`.

@@ -100,6 +100,7 @@ No `sdkconfig` options are required. `sht.h` includes `driver/i2c_master.h` beca
 ## Good to know / limits
 
 - **SHT4x only.** Command `0xFD`. SHT3x is a different protocol and a different module.
+- **Init only attaches the device.** `sht_init()` does not talk to the chip. Presence, NACK and CRC are checked in `sht_read()`.
 - **One instance.** The module is not reentrant and has no mutex; call it from a single task.
 - **The caller owns the bus.** Pins, port, and pull-ups are not this module's business. Do not move them back into `sht.c`.
 - **Busy-wait, not a FreeRTOS delay.** The high-repeatability conversion needs ~8.3 ms; at `CONFIG_FREERTOS_HZ=100` a one-tick delay can overshoot by up to 10 ms, so the wait is `esp_rom_delay_us(10000)`.
